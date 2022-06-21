@@ -3,17 +3,17 @@
 {% block content %}
 
 <div class="w3-panel w3-padding-16 w3-center w3-topbar w3-bottombar w3-border-dark-grey w3-round">
-    <h1>Updating {{user}} profile</h1>
+    <h1>Actualizando el perfil de {{user}}</h1>
 </div>
 
 <!-- Modificar/Agregar avatar -->
 {% if user.is_superuser %}
 <div div class="w3-container w3-card-4">
-    <p>Click here to update your Avatar <a class="w3-button w3-black w3-border" href="{% url 'users:editAvatar' %}"><i class="fa fa-file-image-o"></i></a></p>
+    <p>Click aqui para actualizar el Avatar <a class="w3-button w3-black w3-border" href="{% url 'users:editAvatar' %}"><i class="fa fa-file-image-o"></i></a></p>
 </div>
 {% else %}
 <div class="w3-panel w3-blue-gray">
-    <h5>You're not authorized to change your Avatar</h5>
+    <h5>No esta autorizado a cambiar su Avatar</h5>
 </div>
 {% endif %}
 

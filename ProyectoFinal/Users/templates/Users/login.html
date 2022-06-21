@@ -3,7 +3,7 @@
 {% block content %}
    
 <!-- Formulario -->
-<h3>Welcome back! Log in to your account:</h3>
+<h3>Iniciar sesion:</h3>
 <form action="{% url 'users:Login' %}" method="POST">{% csrf_token %}
     <table class="w3-table w3-topbar w3-bottombar w3-border-dark-grey w3-round">
         {{ form.as_table }}

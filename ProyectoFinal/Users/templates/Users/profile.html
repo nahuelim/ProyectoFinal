@@ -32,8 +32,8 @@
     <h4>
         <ul>
             <ol>Username: {{user.username}}</ol>
-            <ol>Name: {{user.first_name}}</ol>
-            <ol>Lastname: {{user.last_name}}</ol>
+            <ol>Nombre: {{user.nombre}}</ol>
+            <ol>Apellido: {{user.apellido}}</ol>
             <ol>Email: {{user.email}}</ol>
             <ol>Last access: {{user.last_login}}</ol>
             <ol>Joined: {{user.date_joined}}</ol>
@@ -45,7 +45,7 @@
 <a button type="button" class="w3-button w3-block w3-round-large w3-indigo" href=" {% url 'blogapp:Messages' %} "><i class="fa fa-envelope-o"></i> Inbox</button></a>
 
 <div class="w3-bar w3-padding-32 w3-center">
-    <a button type="button" class="w3-button w3-round-large w3-button w3-large w3-indigo w3-right" href=" {% url 'users:editProfile' %} ">Update Profile</button></a>
+    <a button type="button" class="w3-button w3-round-large w3-button w3-large w3-indigo w3-right" href=" {% url 'users:editProfile' %} ">Actualizar Perfil</button></a>
     <a button type="button" class="w3-button w3-round-large w3-button w3-large w3-indigo w3-left" href=" {% url 'blogapp:Home' %} ">Return to Home</button></a>
 
 </div>

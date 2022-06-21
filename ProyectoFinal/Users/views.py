@@ -31,12 +31,12 @@ def login_request(request):
 
                   if user is not None:         #si el usario ingresado no es None (quiere decir que existe), listo, pedir que se loguee
                         login(request, user)
-                        return render(request,"BlogApp/home.html",  {"mensaje":f"Welcome to the blog, {usuario}"})   #si es correcto, loguea y me responde welcome
+                        return render(request,"BlogApp/home.html",  {"mensaje":f"Bienvenido al blog, {usuario}"})   #si es correcto, loguea y me responde welcome
                   else:
-                        return render(request,"Users/login.html", {"form":form, "mensaje":"Error, the user name is incorrect. Please, login again"})   #y si el usuario que ingresó no corresponde a nadie en la BD, me pasa que es incorrecto
+                        return render(request,"Users/login.html", {"form":form, "mensaje":"Error, el username es incorrecto. Intentelo nuevamente."})   #y si el usuario que ingresó no corresponde a nadie en la BD, me pasa que es incorrecto
 
             else:
-                        return render(request,"Users/login.html" ,  {"form":form, "mensaje":"Error, the entered data is invalid. Please, login again"})  #esto se hace si no se cumple la condicion de que el formulario sea valido
+                        return render(request,"Users/login.html" ,  {"form":form, "mensaje":"Error, la informacion es incorrecta. Intentelo nuevamente."})  #esto se hace si no se cumple la condicion de que el formulario sea valido
 
       form = AuthenticationForm()    #si no viene por POST, tenemos que mostrar un formulario vacio para que se ingrese
       return render(request,"Users/login.html", {'form':form})
@@ -56,7 +56,7 @@ def register(request):
                   login(request, new_user)
                   return redirect(reverse('users:Profile', args=[id]))
             else:
-                return render(request, 'Users/register.html', {"form":form, "mensaje": "The user could not be created. Please try again"})
+                return render(request, 'Users/register.html', {"form":form, "mensaje": "El user no pudo ser creado. Intentelo nuevamente."})
       
       else:      
             form = UserRegisterForm()     
@@ -85,18 +85,18 @@ def editProfile(request):
                   #Datos que se modificarán
                   user.username = info['username']
                   user.email = info['email']
-                  user.first_name = info['first_name']
-                  user.last_name = info['last_name']
+                  user.nombre = info['nombre']
+                  user.apellido = info['apellido']
                   user.password1 = info['password1']
                   user.password2 = info['password1']
                   user.save()
 
                   return redirect(reverse('users:Profile', args=[id]))
             else:
-                return render(request, 'Users/edit_profile.html', {"myform":myForm, "mensaje": "The user could not be updated. Please try again"})
+                return render(request, 'Users/edit_profile.html', {"myform":myForm, "mensaje": "El user no pudo ser actualizado. Intentelo nuevamente."})
 
       else: 
-            myForm= UserEditForm(initial={'username':user.username, 'email':user.email, 'first_name':user.first_name, 'last_name':user.last_name}) #Creo el formulario con los datos que voy a modificar
+            myForm= UserEditForm(initial={'username':user.username, 'email':user.email, 'nombre':user.nombre, 'apellido':user.apellido}) #Creo el formulario con los datos que voy a modificar
       return render(request, 'Users/edit_profile.html', {"myForm":myForm, "user":user})  #Voy al html que me permite editar
 
 
@@ -136,7 +136,7 @@ def editAvatar(request):
             new_avatar.save()
             return redirect(reverse('users:Profile', args=[id]))
         else:
-            return render(request, 'Users/edit_avatar.html', {"form_avatar":form_avatar, "mensaje": "The avatar could not be updated. Please try again"})
+            return render(request, 'Users/edit_avatar.html', {"form_avatar":form_avatar, "mensaje": "El avatar no pudo ser actualizado. Intentelo nuevamente."})
     else:
         form_avatar= AvatarForm()
     return render (request, 'Users/edit_avatar.html', {"form_avatar":form_avatar, "avatar":avatar})

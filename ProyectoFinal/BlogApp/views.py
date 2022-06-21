@@ -22,7 +22,7 @@ def home(request):
     except:
         avatar = ''
     
-    posts = Post.objects.all().order_by('-date') [0:3]
+    posts = Post.objects.all().order_by('-fecha') [0:3]
     return render (request, 'BlogApp/home.html', {'avatar':avatar, 'posts': posts})
 
 #---------creacion del CRUD mediante CBV (Clases basadas en vistas)------------------
@@ -49,7 +49,7 @@ def posts(request):
     except:
         avatar = ''
 
-    posts = Post.objects.all().order_by('-date')
+    posts = Post.objects.all().order_by('-fecha')
     return render(request, "BlogApp/posts.html", {"posts":posts, "avatar":avatar})
 
 #------------nueva funcion para mi form que permite agregar Posts-------------------
@@ -69,7 +69,7 @@ def postForm(request):
 
         if myForm.is_valid():
             info = myForm.cleaned_data
-            post = Post(title=info['title'], subtitle=info['subtitle'], author=info['author'],image=info['image'], content=info['content'])
+            post = Post(maquinaria=info['maquinaria'], marca=info['marca'], usuario=info['usuario'],imagen=info['imagen'], detalle=info['detalle'])
             post.save()
             return redirect('blogapp:Posts')
     else:
@@ -97,7 +97,7 @@ def editPost(request, post_id):
             return redirect('blogapp:Posts')
     else:
         form = PostForm(instance=post)
-    return render(request, 'BlogApp/edit_post.html',{'form':form, 'avatar':avatar, 'title':post.title})
+    return render(request, 'BlogApp/edit_post.html',{'form':form, 'avatar':avatar, 'maquinaria':post.maquinaria})
 
 
 #-------------------searchPosts-------------------------------------------
@@ -120,12 +120,12 @@ def searchResult(request):
     except:
         avatar = ''
 
-    if request.GET["title"]:
-        title = request.GET["title"]
-        post = Post.objects.filter(title__icontains=title).order_by("-date")
+    if request.GET["maquinaria"]:
+        maquinaria = request.GET["maquinaria"]
+        post = Post.objects.filter(maquinaria__icontains=maquinaria).order_by("-fecha")
         return render(request, 'BlogApp/searchPost.html', {"post":post, "avatar":avatar})
     else:
-        response="You haven't entered any data."
+        response="No ingreso ninguna informacion."
     return render(request, 'BlogApp/posts.html', {"response":response, "avatar":avatar})
 
 

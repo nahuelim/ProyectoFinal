@@ -5,15 +5,15 @@ from ckeditor.fields import RichTextField
 # Crear el modelo Post en nuesta BD para guardar los posts
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='images', null=True, blank = True)
-    content = RichTextField()
+    maquinaria = models.CharField(max_length=200)
+    marca = models.CharField(max_length=200)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(auto_now_add=True)
+    imagen = models.ImageField(upload_to='images', null=True, blank = True)
+    detalle = RichTextField()
 
     class Meta:
-        ordering = ['-date']
+        ordering = ['-fecha']
 
     def __str__(self):
-        return self.title
+        return self.maquinaria
