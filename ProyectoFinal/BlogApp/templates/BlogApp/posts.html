@@ -27,24 +27,24 @@
         <table class="w3-table-all w3-hoverable">
             <thead>
                 <tr class="w3-dark-grey w3-wide">
-                    <th>Title</th>
-                    <th>Subtitle</th>
-                    <th>Author</th>
-                    <th>Publication date</th>
-                    <th>Content</th>
+                    <th>Maquinaria</th>
+                    <th>Marca</th>
+                    <th>Usuario</th>
+                    <th>Fecha de Publicacion</th>
+                    <th>Detalle</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 {% for post in posts %}
                     <tr>
-                        <th>{{post.title}}</th>
-                        <td>{{post.subtitle}}</td>
-                        <td>{{post.author}}</td>
-                        <td>{{post.date}}</td>
-                        <td>{{post.content|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Read More]</a></td>
+                        <th>{{post.maquinaria}}</th>
+                        <td>{{post.marca}}</td>
+                        <td>{{post.usuario}}</td>
+                        <td>{{post.fecha}}</td>
+                        <td>{{post.detalle|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Read More]</a></td>
                         <td> 
-                            {% if request.user == post.author %}
+                            {% if request.user == post.usuario %}
                             <!-- Botones de tabla -->
                             <a href="{% url 'blogapp:PostDelete' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-trash"></i> Delete Post</a>
                             <a href="{% url 'blogapp:EditPost' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-edit"></i> Edit Post</a>
