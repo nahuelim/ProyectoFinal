@@ -6,16 +6,16 @@
 <!-- Title and subtitle -->
 <div class="w3-panel w3-padding-16 w3-center w3-topbar w3-bottombar w3-border-dark-grey w3-round">
     <h1>Posts</h1>
-    <h3 class="w3-opacity" style="text-shadow:1px 1px 0 #444">View the complete list of Posts:</h3>
+    <h3 class="w3-opacity" style="text-shadow:1px 1px 0 #444">Ver la lista completa de publicaciones:</h3>
 </div>
 
 <!-- Buscar Post -->
 <div class="w3-panel">
-    <h3>You can search for a title:</h3>
+    <h3>Puede buscar un titulo:</h3>
 
     <form action="{% url 'blogapp:SearchResult' %}" method="GET">
         <input type="text" name="title" id="title">
-        <input button type="submit" class="w3-button w3-round-large w3-button w3-indigo" value="Search">
+        <input button type="submit" class="w3-button w3-round-large w3-button w3-indigo" value="Buscar">
     </form>
 </div>
 
@@ -42,12 +42,12 @@
                         <td>{{post.marca}}</td>
                         <td>{{post.usuario}}</td>
                         <td>{{post.fecha}}</td>
-                        <td>{{post.detalle|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Read More]</a></td>
+                        <td>{{post.detalle|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Mas]</a></td>
                         <td> 
                             {% if request.user == post.usuario %}
                             <!-- Botones de tabla -->
-                            <a href="{% url 'blogapp:PostDelete' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-trash"></i> Delete Post</a>
-                            <a href="{% url 'blogapp:EditPost' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-edit"></i> Edit Post</a>
+                            <a href="{% url 'blogapp:PostDelete' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-trash"></i> Eliminar</a>
+                            <a href="{% url 'blogapp:EditPost' post.id %}" class="w3-button w3-round w3-indigo w3-small"><i class="fa fa-edit"></i> Editar</a>
                             {% endif %}
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
 
 <!-- Botones -->
 <div class="w3-bar w3-padding-32">
-    <a button class="w3-button w3-round-large w3-button w3-large w3-indigo" href="{% url 'blogapp:PostForm' %}"><i class="fa fa-edit"></i> Create New Post</a>
+    <a button class="w3-button w3-round-large w3-button w3-large w3-indigo" href="{% url 'blogapp:PostForm' %}"><i class="fa fa-edit"></i> Nuevo Post</a>
     
 </div>
 
