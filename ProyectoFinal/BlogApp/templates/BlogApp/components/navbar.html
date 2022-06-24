@@ -3,7 +3,7 @@
 
     <a href="{% url 'blogapp:Home' %}" class="w3-bar-item w3-button"><i class= "fa fa-home"></i> Home</a>
     <a href="{% url 'blogapp:Posts' %}" class="w3-bar-item w3-button"><i class="fa fa-list-ul"></i> Posts</a>
-    <a href="{% url 'blogapp:About' %}" class="w3-bar-item w3-button"><i class="fa fa-info-circle"></i> About</a>
+    <a href="{% url 'blogapp:About' %}" class="w3-bar-item w3-button"><i class="fa fa-info-circle"></i> Sobre Nosotros</a>
 
     <!-- Dropdown list -->
     {% if user.is_authenticated %}
@@ -15,14 +15,14 @@
             </button>
 
             <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                <a href="{% url 'users:Profile' user.id %}" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Profile</a>
-                <a href="{% url 'blogapp:Messages' %}" class="w3-bar-item w3-button"><i class="fa fa-envelope-o"></i> Inbox</a>
-                <a href="{% url 'users:Logout' %}" class="w3-bar-item w3-button"><i class="fa fa-window-close-o"></i> Log Out</a>
+                <a href="{% url 'users:Profile' user.id %}" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Perfil</a>
+                <a href="{% url 'blogapp:Messages' %}" class="w3-bar-item w3-button"><i class="fa fa-envelope-o"></i> Mensajes</a>
+                <a href="{% url 'users:Logout' %}" class="w3-bar-item w3-button"><i class="fa fa-window-close-o"></i> Cerrar</a>
             </div>
         </div>
     {% else %}
         <!-- Only show if user is not authenticated -->
-        <a button class="w3-bar-item w3-button w3-round-large w3-button w3-blue w3-right w3-margin-left" href="{% url 'users:Register' %}"><b>Register</b></a>
-        <a button class="w3-bar-item w3-button w3-round-large w3-button w3-blue w3-right" href="{% url 'users:Login' %}"><b>Log In</b></a>
+        <a button class="w3-bar-item w3-button w3-round-large w3-button w3-blue w3-right w3-margin-left" href="{% url 'users:Register' %}"><b>Registro</b></a>
+        <a button class="w3-bar-item w3-button w3-round-large w3-button w3-blue w3-right" href="{% url 'users:Login' %}"><b>Iniciar Sesión</b></a>
     {% endif %}
 </div>
