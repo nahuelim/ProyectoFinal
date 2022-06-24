@@ -14,12 +14,12 @@
     <h3>Puede Buscar un Titulo:</h3>
 
     <form action="{% url 'blogapp:SearchResult' %}" method="GET">
-        <input type="text" name="title" id="title">
+        <input type="text" name="maquinaria" id="maquinaria">
         <input button type="submit" class="w3-button w3-round-large w3-button w3-indigo" value="Buscar">
     </form>
 </div>
 
-{% if post %}
+{% if posts %}
     
     <!-- Tabla -->
     
@@ -66,4 +66,4 @@
 </div>
 
 {% endblock posts %}
-{% endblock %}
+{% endblock content %}
