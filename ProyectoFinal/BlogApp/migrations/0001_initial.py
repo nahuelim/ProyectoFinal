@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('marca', models.CharField(max_length=200)),
                 ('fecha', models.DateTimeField(auto_now_add=True)),
                 ('imagen', models.ImageField(blank=True, null=True, upload_to='images')),
-                ('detalle', models.TextField()),
+                ('content', models.TextField()),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={

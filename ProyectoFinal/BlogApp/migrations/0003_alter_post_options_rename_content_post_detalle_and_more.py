@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name='post',
             old_name='content',
-            new_name='detalle',
+            new_name='content',
         ),
         migrations.RenameField(
             model_name='post',

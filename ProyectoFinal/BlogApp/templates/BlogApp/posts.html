@@ -31,7 +31,7 @@
                     <th>Marca</th>
                     <th>Usuario</th>
                     <th>Fecha de Publicacion</th>
-                    <th>Detalle</th>
+                    <th>Content</th>
                     <th></th>
                 </tr>
             </thead>
@@ -42,7 +42,7 @@
                         <td>{{post.marca}}</td>
                         <td>{{post.usuario}}</td>
                         <td>{{post.fecha}}</td>
-                        <td>{{post.detalle|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Leer Mas]</a></td>
+                        <td>{{post.content|slice:':70'|safe}} <a class="w3-text-blue" href="{% url 'blogapp:PostDetail' post.id %}">... [Leer Mas]</a></td>
                         <td> 
                             {% if request.user == post.usuario %}
                             <!-- Botones de tabla -->

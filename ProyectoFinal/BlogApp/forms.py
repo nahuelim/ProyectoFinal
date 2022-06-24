@@ -7,4 +7,4 @@ class PostForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = Post
-        fields = ("maquinaria", "marca", "usuario", "imagen")
+        fields = ("maquinaria", "marca", "usuario", "imagen", "content")
