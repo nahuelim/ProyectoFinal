@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='post',
-            name='content',
+            name='detalle',
             field=ckeditor.fields.RichTextField(),
         ),
     ]

@@ -18,15 +18,15 @@ class Migration(migrations.Migration):
             name='Post',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('subtitle', models.CharField(max_length=200)),
-                ('date', models.DateTimeField(auto_now_add=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='images')),
-                ('content', models.TextField()),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('maquinaria', models.CharField(max_length=200)),
+                ('marca', models.CharField(max_length=200)),
+                ('fecha', models.DateTimeField(auto_now_add=True)),
+                ('imagen', models.ImageField(blank=True, null=True, upload_to='images')),
+                ('detalle', models.TextField()),
+                ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'ordering': ['-date'],
+                'ordering': ['-fecha'],
             },
         ),
     ]

@@ -16,4 +16,4 @@ class Post(models.Model):
         ordering = ['-fecha']
 
     def __str__(self):
-        return self.title
+        return self.maquinaria

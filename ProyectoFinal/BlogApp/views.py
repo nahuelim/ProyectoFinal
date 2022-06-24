@@ -9,7 +9,6 @@ from BlogApp.forms import *
 #mixin y decoradores:
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from Users.models import Avatar
 
 
 # Create your views here.
