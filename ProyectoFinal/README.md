@@ -1,6 +1,13 @@
 # FinalProjectBlog
 Este blog es parte del proyecto final del curso de Python de CoderHouse, donde usamos Django como framework.
 
+# Integrantes
+Nahuel Pablo Lim
+Miguel Serrudo
+
+# Link a video explicativo del la app.
+https://youtu.be/HjoqtoYplk0
+
 ### Instrucciones:
 Instalar Python desde la [web oficial](https://www.python.org/downloads/)
 
