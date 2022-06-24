@@ -6,7 +6,7 @@ Instalar Python desde la [web oficial](https://www.python.org/downloads/)
 
 1.  Clonar el proyecto (o descargar el archivo comprimido)
 
-        -    *git clone https://github.com/flor-ba/FinalProjectBlog.git*
+        -    *git clone https://github.com/nahuelim/ProyectoFinal.git
 
 2.  Instalar las dependencias del proyecto:
 
@@ -69,9 +69,4 @@ a sus mensajes y cerrar la sesión.
 -    ***Backend***: Python with Django
 
 ***
-### Video explicativo
-En el siguiente link encontrarás un video mostrando las funcionalidades del Blog -> [Presentación](https://1drv.ms/v/s!AjKmw0Z03QVFiT7yArEx7s6sQmws)
 
-***
-### Contacto
-Creado por mí :) [FLor](https://github.com/flor-ba) - no dudes en contactarme!
