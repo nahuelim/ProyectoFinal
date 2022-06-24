@@ -37,7 +37,7 @@ Instalar Python desde la [web oficial](https://www.python.org/downloads/)
 ***
   
 ### Acerca del Blog
-El proyecto trata de un blog dedicado a recomendaciones y articulos de cine, incluyendo tanto peliculas como series.
+El proyecto trata de un blog dedicado a informacion sobre tractores agricolas y ganaderas.
 
 Cualquier persona que entra al blog puede visualizar los posteos (tanto la lista de posts como el detalle de cada uno) pero, para poder **editar**, **crear** 
 o **eliminar** contenido deberán estar **logueados** o en su defecto, **registrarse**. A su vez, únicamente los autores del posteo podrán **editarlo**.
@@ -47,7 +47,7 @@ Cada **post** consta de un título, subtítulo, imagen, contenido, autor y fecha
 Los posts se listan del más reciente al más antiguo.
 
 #### Perfil
-Cada **usuario** puede editar su perfil. Pero sólo el **admin** (o superusario) puede agregarle una imágen como avatar.  
+Cada **usuario** puede editar su perfil. 
 Cada usuario consta de un numbre de usuario, contraseña y un email como datos obligatorios, y si así lo desean pueden agregar su nombre y apellido.  
 En el perfil del usuario se lista además la fecha de su último ingreso y la fecha en la que se ha unido (registrado) al blog.  
 
@@ -61,7 +61,7 @@ Dentro del perfil o desde la barra de navegación el usuario accederá a su **In
 #### Layout
 El blog cuenta con una **barra de navegación** a la cual se puede acceder a las distintas secciones del mismo -> Home, Posts, About. Y además, en el margen derecho 
 podrás ingresar, o registrar un nuevo usuario.  
-Al estar logueado en el margen derecho se muestra el nombre de usuario, y la imagen del avatar si corresponde, con un menú desplegable donde se puede acceder al Perfil, 
+Al estar logueado en el margen derecho se muestra el nombre de usuario, con un menú desplegable donde se puede acceder al Perfil, 
 a sus mensajes y cerrar la sesión.
 
 #### Tecnologías usadas
