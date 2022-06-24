@@ -49,7 +49,7 @@ def postForm(request):
 
         if myForm.is_valid():
             info = myForm.cleaned_data
-            post = Post(maquinaria=info['maquinaria'], marca=info['marca'], usuario=info['usuario'],imagen=info['imagen'], content=info['content'])
+            post = Post(maquinaria=info['maquinaria'], marca=info['marca'], usuario=info['usuario'],imagen=info['imagen'], detalle=info['detalle'])
             post.save()
             return redirect('blogapp:Posts')
     else:

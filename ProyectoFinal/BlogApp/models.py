@@ -11,7 +11,7 @@ class Post(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)
     imagen = models.ImageField(upload_to='images', null=True, blank = True)
-    content = RichTextField()
+    detalle = RichTextField()
 
     class Meta:
         ordering = ['-fecha']

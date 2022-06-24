@@ -29,7 +29,7 @@
 
 
 <!-- Posts display -->
-{% if posts %}
+{% if post %}
     <div class="w3-panel">
         <h1>Ultimos Posts</h1>
         {% for post in posts %}
@@ -39,8 +39,8 @@
                     <p>{{ post.usuario }} | {{ post.fecha }}</p>
                     <hr>
                     {% if post.imagen %}
-                        <img src="{{post.image.url}}" class="w3-left w3-round w3-margin-right" style="width:200px" alt="title">
-                    {% endif %}
+                        <img src="{{post.imagen.url}}" class="w3-left w3-round w3-margin-right" style="width:200px" alt="title">
+                    {% endif %} 
                     <p>{{ post.marca }}</p><br>
                 </div>
                 <a button class="w3-button w3-block w3-dark-grey" href="{% url 'blogapp:PostDetail' post.id %}">Mas..</a>
