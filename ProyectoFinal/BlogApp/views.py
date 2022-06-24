@@ -1,20 +1,19 @@
 from django.shortcuts import render, redirect
-from .models import *
 #para el CRUD:
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import DeleteView
 #importamos forms.py:
 from BlogApp.forms import *
 #mixin y decoradores:
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from .models import *
 
 
 # Create your views here.
 
 def home(request):
-    
     posts = Post.objects.all().order_by('-fecha') [0:3]
     return render (request, 'BlogApp/home.html', {'posts': posts})
 

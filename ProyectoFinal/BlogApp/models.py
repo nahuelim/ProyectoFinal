@@ -5,6 +5,7 @@ from ckeditor.fields import RichTextField
 # Crear el modelo Post en nuesta BD para guardar los posts
 
 class Post(models.Model):
+    """class representing post"""
     maquinaria = models.CharField(max_length=200)
     marca = models.CharField(max_length=200)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -15,5 +16,5 @@ class Post(models.Model):
     class Meta:
         ordering = ['-fecha']
 
-    def __str__(self):
-        return self.maquinaria
+def __str__(self):
+    return self.maquinaria
