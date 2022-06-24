@@ -21,14 +21,14 @@ class UserRegisterForm(UserCreationForm):
 class UserEditForm(UserCreationForm):
     username = forms.CharField(label='Username')
     email = forms.EmailField(label='Email')
-    nombre = forms.CharField(label='Name', required=False)
-    apellido = forms.CharField(label='Lastname', required=False) 
+    first_name = forms.CharField(label='Nombre', required=False)
+    last_name = forms.CharField(label='Apellido', required=False) 
     password1 = forms.CharField(label='New Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ['username','email','nombre','apellido','password1', 'password2']
+        fields = ['username','email','first_name','last_name','password1', 'password2']
         help_texts = {k:"" for k in fields}
 
 

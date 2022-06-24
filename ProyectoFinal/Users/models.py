@@ -9,7 +9,7 @@ class Avatar(models.Model):
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)  #Subcaperta avatars de media
 
     def __str__(self):
-        return f"Imagen perfil del user: {self.user.username}"
+        return f"Imagen perfil del user: {self.user}"
 
 
 class Messages(models.Model):

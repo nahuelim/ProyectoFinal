@@ -85,8 +85,8 @@ def editProfile(request):
                   #Datos que se modificarán
                   user.username = info['username']
                   user.email = info['email']
-                  user.nombre = info['nombre']
-                  user.apellido = info['apellido']
+                  user.first_name = info['first_name']
+                  user.last_name = info['last_name']
                   user.password1 = info['password1']
                   user.password2 = info['password1']
                   user.save()
@@ -96,7 +96,7 @@ def editProfile(request):
                 return render(request, 'Users/edit_profile.html', {"myform":myForm, "mensaje": "El user no pudo ser actualizado. Intentelo nuevamente."})
 
       else: 
-            myForm= UserEditForm(initial={'username':user.username, 'email':user.email, 'nombre':user.nombre, 'apellido':user.apellido}) #Creo el formulario con los datos que voy a modificar
+            myForm= UserEditForm(initial={'username':user.username, 'email':user.email, 'first_name':user.first_name, 'last_name':user.last_name}) #Creo el formulario con los datos que voy a modificar
       return render(request, 'Users/edit_profile.html', {"myForm":myForm, "user":user})  #Voy al html que me permite editar
 
 
